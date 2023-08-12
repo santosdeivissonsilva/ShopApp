@@ -1,5 +1,8 @@
 public class ShopApp {
     public static void main(String[] args) {
+        double imposto = 0.2; 
+        double precoTotal;
+
         Clientes cliente1 = new Clientes();
         cliente1.nome = "Paula";
 
@@ -18,5 +21,9 @@ public class ShopApp {
 
         System.out.println("Primeira roupa: " + roupa1.descricao + ", preço: R$" + roupa1.preco + ", tamanho: " + roupa1.tamanho);
         System.out.println("Segunda roupa: " + roupa2.descricao + ", preço: R$" + roupa2.preco + ", tamanho: " + roupa2.tamanho);
+
+        precoTotal = (2*roupa2.preco + roupa1.preco) * (1 + imposto);
+
+        System.out.println("O valor total a pagar é: R$" + precoTotal);
     }
 }
