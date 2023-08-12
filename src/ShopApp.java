@@ -41,6 +41,7 @@ public class ShopApp {
             if (cliente1.tamanho.equals(roupa.tamanho)){
                 precoTotal += roupa.preco;
                 System.out.println("Roupa: " + roupa.descricao + ", preço: R$" + roupa.preco + ", tamanho: " + roupa.tamanho);
+                if (precoTotal > 25) {break;}
             }
         }
 
