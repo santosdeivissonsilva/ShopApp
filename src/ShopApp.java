@@ -4,43 +4,43 @@ public class ShopApp {
         double precoTotal = 0.0;
 
         Clientes cliente1 = new Clientes();
-        cliente1.nome = "Paula";
-        cliente1.tamanho = "P";
+        cliente1.setNome("Paula");;
+        cliente1.setTamanho("P");;
 
-        System.out.println("Perfil: " + cliente1.nome);
+        System.out.println("Perfil: " + cliente1.getNome());
         System.out.println("Seja bem-vinda (o) ao Perfect Choice!");
 
         Roupas[] roupas = {new Roupas(), new Roupas(), new Roupas(), new Roupas()};
 
-        roupas[0].descricao = "Jaqueta Azul";
-        roupas[0].preco = 76.99;
-        roupas[0].tamanho = "M";
+        roupas[0].setDescricao("Jaqueta Azul");
+        roupas[0].setPreco(76.99);
+        roupas[0].setTamanho("M");
 
-        roupas[1].descricao = "Camisa Laranja";
-        roupas[1].preco = 19.90;
-        roupas[1].tamanho = "P";
+        roupas[1].setDescricao("Camisa Laranja");
+        roupas[1].setPreco(19.90);
+        roupas[1].setTamanho("P");
 
-        roupas[2].descricao = "Bermuda Verde";
-        roupas[2].preco = 15;
-        roupas[2].tamanho = "P";
+        roupas[2].setDescricao("Bermuda Verde");
+        roupas[2].setPreco(15);
+        roupas[2].setTamanho("P");
 
-        roupas[3].descricao = "Camiseta Branca";
-        roupas[3].preco = 10.5;
-        roupas[3].tamanho = "P";
+        roupas[3].setDescricao("Camiseta Branca");
+        roupas[3].setPreco(10.5);
+        roupas[3].setTamanho("P");
 
         int medida = 3;
 
-        cliente1.tamanho = switch (medida) {
-            case 1, 2, 3 -> "P";
-            case 4, 5, 6 -> "M";
-            case 7, 8, 9 -> "G";
-            default -> "X";
+        switch (medida) {
+            case 1, 2, 3 -> cliente1.setTamanho("P");
+            case 4, 5, 6 -> cliente1.setTamanho("M");
+            case 7, 8, 9 -> cliente1.setTamanho("G");
+            default -> cliente1.setTamanho("X");
         };
         
         for (Roupas roupa: roupas) {
-            if (cliente1.tamanho.equals(roupa.tamanho)){
-                precoTotal += roupa.preco;
-                System.out.println("Roupa: " + roupa.descricao + ", preço: R$" + roupa.preco + ", tamanho: " + roupa.tamanho);
+            if (cliente1.getTamanho().equals(roupa.getTamanho())){
+                precoTotal += roupa.getPreco() * (1 + imposto);
+                System.out.println("Roupa: " + roupa.getDescricao() + ", preço: R$" + roupa.getPreco() + ", tamanho: " + roupa.getTamanho());
                 if (precoTotal > 25) {break;}
             }
         }
