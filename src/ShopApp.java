@@ -1,15 +1,19 @@
 public class ShopApp {
     public static void main(String[] args) {
         double imposto = 0.2; 
-        double precoTotal;
+        double precoTotal = 0.0;
 
         Clientes cliente1 = new Clientes();
         cliente1.nome = "Paula";
+        cliente1.tamanho = "P";
 
-        System.out.println(cliente1.nome + ", seja bem-vinda ao Perfect Choice!");
+        System.out.println("Perfil: " + cliente1.nome);
+        System.out.println("Seja bem-vinda (o) ao Perfect Choice!");
 
         Roupas roupa1 = new Roupas();
         Roupas roupa2 = new Roupas();
+
+        Roupas[] roupas = {roupa1, roupa2};
 
         roupa1.descricao = "Jaqueta Azul";
         roupa1.preco = 76.99;
@@ -19,10 +23,19 @@ public class ShopApp {
         roupa2.preco = 19.90;
         roupa2.tamanho = "P";
 
-        System.out.println("Primeira roupa: " + roupa1.descricao + ", preço: R$" + roupa1.preco + ", tamanho: " + roupa1.tamanho);
-        System.out.println("Segunda roupa: " + roupa2.descricao + ", preço: R$" + roupa2.preco + ", tamanho: " + roupa2.tamanho);
+        int medida = 3;
 
-        precoTotal = (2*roupa2.preco + roupa1.preco) * (1 + imposto);
+        cliente1.tamanho = switch (medida) {
+            case 1, 2, 3 -> "S";
+            case 4, 5, 6 -> "M";
+            case 7, 8, 9 -> "G";
+            default -> "X";
+        };
+        
+        for(Roupas roupa: roupas) {
+            precoTotal += roupa.preco;
+            System.out.println("Roupa: " + roupa.descricao + ", preço: R$" + roupa.preco + ", tamanho: " + roupa.tamanho);
+        }
 
         System.out.println("O valor total a pagar é: R$" + precoTotal);
     }
