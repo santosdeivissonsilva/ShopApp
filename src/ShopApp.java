@@ -1,6 +1,5 @@
 public class ShopApp {
     public static void main(String[] args) {
-        double imposto = 0.2; 
         double precoTotal = 0.0;
 
         Clientes cliente1 = new Clientes();
@@ -39,7 +38,7 @@ public class ShopApp {
         
         for (Roupas roupa: roupas) {
             if (cliente1.getTamanho().equals(roupa.getTamanho())){
-                precoTotal += roupa.getPreco() * (1 + imposto);
+                precoTotal += roupa.getPreco();
                 System.out.println("Roupa: " + roupa.getDescricao() + ", preço: R$" + roupa.getPreco() + ", tamanho: " + roupa.getTamanho());
                 if (precoTotal > 25) {break;}
             }
