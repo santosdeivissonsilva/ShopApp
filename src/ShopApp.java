@@ -27,14 +27,9 @@ public class ShopApp {
         roupas[3].setPreco(10.5);
         roupas[3].setTamanho("P");
 
+        // Alterando tamanho com número de medida
         int medida = 3;
-
-        switch (medida) {
-            case 1, 2, 3 -> cliente1.setTamanho("P");
-            case 4, 5, 6 -> cliente1.setTamanho("M");
-            case 7, 8, 9 -> cliente1.setTamanho("G");
-            default -> cliente1.setTamanho("X");
-        };
+        cliente1.setTamanho(medida);
         
         for (Roupas roupa: roupas) {
             if (cliente1.getTamanho().equals(roupa.getTamanho())){
