@@ -5,23 +5,8 @@ public class ShopApp {
         System.out.println("Perfil: " + cliente1.getNome() + " - Tamanho: " + cliente1.getTamanho());
         System.out.println("Seja bem-vinda (o) ao Perfect Choice!");
 
-        Roupas[] roupas = { new Roupas(), new Roupas(), new Roupas(), new Roupas() };
-
-        roupas[0].setDescricao("Jaqueta Azul");
-        roupas[0].setPreco(76.90);
-        roupas[0].setTamanho("M");
-
-        roupas[1].setDescricao("Camisa Laranja");
-        roupas[1].setPreco(19.90);
-        roupas[1].setTamanho("P");
-
-        roupas[2].setDescricao("Bermuda Verde");
-        roupas[2].setPreco(15);
-        roupas[2].setTamanho("P");
-
-        roupas[3].setDescricao("Camiseta Branca");
-        roupas[3].setPreco(10.5);
-        roupas[3].setTamanho("P");
+        Roupas[] roupas = { new Roupas("Jaqueta Azul", 76.90, "M"), new Roupas("Camisa Laranja", 19.90, "P"),
+                new Roupas("Bermuda Verde", 15, "P"), new Roupas("Camiseta Branca", 10.5, "P") };
 
         cliente1.adicionarRoupas(roupas);
 

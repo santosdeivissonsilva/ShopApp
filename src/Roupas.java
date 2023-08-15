@@ -5,6 +5,12 @@ public class Roupas {
     public final double PRECO_MINIMO = 10.0;
     public final double IMPOSTO = 0.2;
 
+    public Roupas(String descricao, double preco, String tamanho) {
+        this.descricao = descricao;
+        this.preco = preco;
+        this.tamanho = tamanho;
+    }
+
     public String getDescricao() {
         return descricao;
     }
