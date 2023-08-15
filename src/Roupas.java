@@ -2,8 +2,8 @@ public class Roupas {
     private String descricao;
     private double preco;
     private String tamanho = "M";
-    public final double PRECO_MINIMO = 10.0;
-    public final double IMPOSTO = 0.2;
+    public final static double PRECO_MINIMO = 10.0;
+    public final static double IMPOSTO = 0.2;
 
     public Roupas(String descricao, double preco, String tamanho) {
         this.descricao = descricao;

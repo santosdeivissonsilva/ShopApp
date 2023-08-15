@@ -8,6 +8,8 @@ public class ShopApp {
         Roupas[] roupas = { new Roupas("Jaqueta Azul", 76.90, "M"), new Roupas("Camisa Laranja", 19.90, "P"),
                 new Roupas("Bermuda Verde", 15, "P"), new Roupas("Camiseta Branca", 10.5, "P") };
 
+        System.out.println("Valor mínimo para compras: R$ " + Roupas.PRECO_MINIMO);
+
         cliente1.adicionarRoupas(roupas);
 
         for (Roupas roupa : roupas) {
