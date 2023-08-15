@@ -1,12 +1,6 @@
 public class ShopApp {
     public static void main(String[] args) {
-        Clientes cliente1 = new Clientes();
-        cliente1.setNome("Paula");
-        cliente1.setTamanho("P");
-
-        // Alterando tamanho com número de medida
-        int medida = 3;
-        cliente1.setTamanho(medida);
+        Clientes cliente1 = new Clientes("Paula", 3);
 
         System.out.println("Perfil: " + cliente1.getNome() + " - Tamanho: " + cliente1.getTamanho());
         System.out.println("Seja bem-vinda (o) ao Perfect Choice!");

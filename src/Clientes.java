@@ -4,6 +4,11 @@ public class Clientes {
 
     private Roupas[] roupas;
 
+    public Clientes(String nome, int medida) {
+        this.nome = nome;
+        setTamanho(medida);
+    }
+
     public void adicionarRoupas(Roupas[] itensCarrinho) {
         roupas = itensCarrinho;
     }
