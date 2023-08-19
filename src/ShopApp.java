@@ -1,4 +1,9 @@
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Arrays;
+import io.helidon.webserver.Routing;
+import io.helidon.webserver.ServerConfiguration;
+import io.helidon.webserver.WebServer;
 
 public class ShopApp {
     public static void main(String[] args) {
@@ -9,34 +14,28 @@ public class ShopApp {
 
         Roupas[] roupas = { new Roupas("Jaqueta Azul", 76.90, "M"), new Roupas("Camisa Laranja", 19.90, "P"),
                 new Roupas("Bermuda Verde", 15, "P"), new Roupas("Camiseta Branca", 10.5, "P") };
-
-        System.out.println("Valor mínimo para compras: R$ " + Roupas.PRECO_MINIMO);
-
-        cliente1.adicionarRoupas(roupas);
-
-        Arrays.sort(cliente1.getRoupas());
-
-        for (Roupas roupa : roupas) {
-            System.out.println(roupa.toString());
-        }
-
-        System.out.println("O valor total da compra foi: " + cliente1.getValorTotalCarrinho());
-
-        int media = 0;
-        int cont = 0;
-
-        for (Roupas roupa : cliente1.getRoupas()) {
-            if (roupa.getTamanho().equals("G")) {
-                cont++;
-                media += roupa.getPreco();
-            }
-        }
+        
         try {
-            media = media / cont;
-            System.out.println("Valor médio: " + media + ", quantidade de itens: " + cont);
-        } catch (ArithmeticException e) {
-            System.out.println("Não é possível fazer esta divisão! (Divisão por 0)");
+            ListaRoupas lista = new ListaRoupas(roupas);
+            Routing routing = Routing.builder().get("/lista", lista).build();
+            ServerConfiguration config = ServerConfiguration.builder().bindAddress(InetAddress.getLocalHost()).port(8888).build();
+            WebServer ws = WebServer.create(config, routing);
+            ws.start();
+        } catch (UnknownHostException ex) {
+            ex.printStackTrace();
         }
+
+    //    System.out.println("Valor mínimo para compras: R$ " + Roupas.PRECO_MINIMO);
+
+    //    cliente1.adicionarRoupas(roupas);
+
+    //    Arrays.sort(cliente1.getRoupas());
+
+    //    for (Roupas roupa : roupas) {
+    //         System.out.println(roupa.toString());
+    //     }
+
+    //     System.out.println("O valor total da compra foi: " + cliente1.getValorTotalCarrinho());
 
     }
 }
