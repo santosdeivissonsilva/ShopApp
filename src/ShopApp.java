@@ -18,5 +18,22 @@ public class ShopApp {
         }
 
         System.out.println("O valor total da compra foi: " + cliente1.getValorTotalCarrinho());
+
+        int media = 0;
+        int cont = 0;
+
+        for (Roupas roupa : cliente1.getRoupas()) {
+            if (roupa.getTamanho().equals("G")) {
+                cont++;
+                media += roupa.getPreco();
+            }
+        }
+        try {
+            media = media / cont;
+            System.out.println("Valor médio: " + media + ", quantidade de itens: " + cont);
+        } catch (ArithmeticException e) {
+            System.out.println("Não é possível fazer esta divisão! (Divisão por 0)");
+        }
+
     }
 }
