@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ShopApp {
     public static void main(String[] args) {
         Clientes cliente1 = new Clientes("Paula", 3);
@@ -11,6 +13,8 @@ public class ShopApp {
         System.out.println("Valor mínimo para compras: R$ " + Roupas.PRECO_MINIMO);
 
         cliente1.adicionarRoupas(roupas);
+
+        Arrays.sort(cliente1.getRoupas());
 
         for (Roupas roupa : roupas) {
             System.out.println(roupa.toString());

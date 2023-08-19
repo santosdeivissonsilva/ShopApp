@@ -1,4 +1,4 @@
-public class Roupas {
+public class Roupas implements Comparable<Roupas>{
     private String descricao;
     private double preco;
     private String tamanho = "M";
@@ -40,5 +40,10 @@ public class Roupas {
     @Override
     public String toString() {
         return "Roupa: " + getDescricao() + ", preço: R$" + getPreco() + ", tamanho: " + getTamanho();
+    }
+
+    @Override
+    public int compareTo(Roupas item) {
+        return this.descricao.compareTo(item.descricao);
     }
 }
