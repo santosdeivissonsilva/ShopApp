@@ -36,4 +36,8 @@ public class Roupas {
     public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
     }
+
+    public String toString() {
+        return "Roupa: " + getDescricao() + ", preço: R$" + getPreco() + ", tamanho: " + getTamanho();
+    }
 }

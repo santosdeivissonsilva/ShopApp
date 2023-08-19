@@ -13,8 +13,7 @@ public class ShopApp {
         cliente1.adicionarRoupas(roupas);
 
         for (Roupas roupa : roupas) {
-            System.out.println("Roupa: " + roupa.getDescricao() + ", preço: R$" + roupa.getPreco() + ", tamanho: "
-                    + roupa.getTamanho());
+            System.out.println(roupa.toString());
         }
 
         System.out.println("O valor total da compra foi: " + cliente1.getValorTotalCarrinho());
