@@ -37,6 +37,7 @@ public class Roupas {
         this.tamanho = tamanho;
     }
 
+    @Override
     public String toString() {
         return "Roupa: " + getDescricao() + ", preço: R$" + getPreco() + ", tamanho: " + getTamanho();
     }
